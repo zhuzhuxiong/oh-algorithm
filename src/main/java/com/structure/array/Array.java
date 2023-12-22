@@ -18,9 +18,11 @@ public class Array {
         int[] nums = {1,2,3,4,5};
         System.out.println("nums===" + Arrays.toString(nums));
 
+        /** 插入 */
         insert(nums, 8, 1);
         System.out.println("插入操作后nums===" + Arrays.toString(nums));
 
+        /** 移除 */
         remove(nums, 2);
         System.out.println("删除操作后nums===" + Arrays.toString(nums));
 
