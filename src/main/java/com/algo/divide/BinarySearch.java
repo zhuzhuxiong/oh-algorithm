@@ -1,13 +1,40 @@
-package com.algo.search;
+package com.algo.divide;
 
 import java.util.HashMap;
 
 /**
  * 二分查找
  *
- * @author l
+ * @author zz
  */
 public class BinarySearch {
+
+    /**
+     * 【分治】给定有序数组nums，找有无target值，返回index，无：-1；
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public static int binarySearchRecur(int[] nums, int target) {
+        return dfs(nums, target, 0, nums.length - 1);
+    }
+
+    private static int dfs(int[] nums, int taget, int left, int right) {
+        /** 递归时 if，迭代是while */
+        if (left < right) {
+            int m = left + (right - left) / 2;
+            /** 每一步都需要return */
+            if (nums[m] == taget) {
+                return m;
+            } else if (nums[m] > taget) {
+                return dfs(nums, taget, left, m - 1);
+            } else {
+                return dfs(nums, taget, m + 1, right);
+            }
+        }
+        return -1;
+    }
 
     /**
      * 给定有序数组nums，找有无target值，返回index，无：-1；
@@ -20,8 +47,7 @@ public class BinarySearch {
         int i = 0, j = nums.length - 1;
         /**
          * 双闭区间：[0,length -1] <= ；j=m-1;i=m+1;（建议使用）
-         * 左闭右开：[0,length] < ; i=m+1;j=m;
-         *
+         * 左闭右开：[0,length) < ; i=m+1;j=m;
          */
         while (i <= j) {
             int m = i + (j - i) / 2;
@@ -170,6 +196,8 @@ public class BinarySearch {
         System.out.println(linear[0] + "；" + linear[1]);
         int[] ints = hashAssist(nums, 9);
         System.out.println(ints[0] + "；" + ints[1]);
+
+        System.out.println(binarySearchRecur(nums, 9));
 
     }
 }

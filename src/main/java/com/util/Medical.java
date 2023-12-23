@@ -4,26 +4,25 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * 暂存
+ *
  * @author
  */
 public class Medical {
 
     public static void main(String[] args) {
-        double a = 4;
-        double b = 3;
-        double c = 2;
-        double d = 1;
+        double a = 10;
+        double b = 278;
+        double c = 10602;
+        double d = 11726243;
 
-
-        System.out.println("公式1：ROR:" + calROR(a, b, 3, 4));
+        System.out.println("公式1：ROR:" + calROR(a, b, c, d));
         //保留两位小数，四舍五入
-        System.out.println("公式1：ROR:" + new BigDecimal(calROR(a, b, 3, 4)).setScale(2, RoundingMode.HALF_UP));
+        System.out.println("公式1：ROR:" + new BigDecimal(calROR(a, b, c, d)).setScale(3, RoundingMode.HALF_UP));
 
-        String ci = calCI(a, b, 3, 4);
+        String ci = calCI(a, b, c, d);
         System.out.println("公式2：95%CI:" + ci);
 
-        double prr = calPRR(a, b, 3, 4);
+        double prr = calPRR(a, b, c, d);
         System.out.println("公式3：PRR:" + prr);
 
         double x2 = calX2(a, b, c, d);
@@ -90,7 +89,7 @@ public class Medical {
      * @param b
      * @param c
      * @param d
-     * @return
+     * @return 11736845  288
      */
     public static double calPRR(double a, double b, double c, double d) {
         return a * (c + d) / (a + b) / c;
