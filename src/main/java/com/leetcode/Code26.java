@@ -37,17 +37,6 @@ public class Code26 {
     }
 
     public static int practice(int[] nums) {
-        if (0 == nums.length) {
-            return 0;
-        }
-        int fast = 1, slow = 1;
-        while (fast < nums.length) {
-            if (nums[fast] != nums[fast-1]) {
-                nums[slow] = nums[fast];
-                slow++;
-            }
-            fast++;
-        }
-        return slow;
+        return 0;
     }
 }

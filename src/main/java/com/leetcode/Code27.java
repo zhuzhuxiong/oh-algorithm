@@ -25,9 +25,9 @@ public class Code27 {
         int left = 0;
         while (left < right) {
             if (nums[left] == val) {
-                nums[left] = nums[right-1];
+                nums[left] = nums[right - 1];
                 right--;
-            }else {
+            } else {
                 left++;
             }
         }
@@ -49,15 +49,6 @@ public class Code27 {
     }
 
     public static int practice(int[] nums, int val) {
-        int left = 0, right = nums.length;
-        while (left < right) {
-            if (nums[left] == val) {
-                nums[left] = nums[right -1];
-                right--;
-            }else {
-                left++;
-            }
-        }
-        return left;
+        return 0;
     }
 }

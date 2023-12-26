@@ -10,13 +10,15 @@ import java.util.Map;
  */
 public class Code169 {
 
-    /** 元素统计 利用hash */
+    /**
+     * 元素统计 利用hash
+     */
     public static int majorityElement(int[] nums) {
         HashMap<Integer, Integer> countMap = new HashMap<>();
         for (int num : nums) {
             if (!countMap.containsKey(num)) {
-                countMap.put(num,1);
-            }else {
+                countMap.put(num, 1);
+            } else {
                 countMap.put(num, countMap.get(num) + 1);
             }
         }
@@ -35,7 +37,14 @@ public class Code169 {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{3,2,3};
+        int[] nums = new int[]{3, 2, 3};
         System.out.println(majorityElement(nums));
+
+        int[] nums1 = new int[]{3, 2, 3};
+        System.out.println(practice(nums1));
+    }
+
+    public static int practice(int[] nums) {
+        return 0;
     }
 }
