@@ -32,9 +32,6 @@ public class Code169 {
         return majorityEntry.getKey();
     }
 
-    public static int divide(int[] nums) {
-        return 0;
-    }
 
     public static void main(String[] args) {
         int[] nums = new int[]{3, 2, 3};
