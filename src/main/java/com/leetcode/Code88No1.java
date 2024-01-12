@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * @author zz
  */
-public class Code88 {
+public class Code88No1 {
 
     /**
      * 尾指针

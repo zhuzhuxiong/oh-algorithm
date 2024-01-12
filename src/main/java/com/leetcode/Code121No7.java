@@ -9,7 +9,7 @@ package com.leetcode;
  *
  * @author zz
  */
-public class Code121 {
+public class Code121No7 {
 
     public static int maxProfit(int[] prices) {
         int minPrice = Integer.MAX_VALUE;

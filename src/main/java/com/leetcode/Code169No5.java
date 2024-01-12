@@ -8,7 +8,7 @@ import java.util.Map;
  *
  * @author zz
  */
-public class Code169 {
+public class Code169No5 {
 
     /**
      * 元素统计 利用hash

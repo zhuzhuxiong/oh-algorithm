@@ -6,7 +6,7 @@ package com.leetcode;
  *
  * @author zz
  */
-public class Code55 {
+public class Code55No9 {
 
     /**
      * 【贪心】

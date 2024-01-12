@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * @author zzx
  */
-public class Code80 {
+public class Code80No4 {
 
     public static int removeDuplicates(int[] nums) {
         int k = 2;

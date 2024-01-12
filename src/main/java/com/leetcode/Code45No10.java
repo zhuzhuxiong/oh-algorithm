@@ -5,7 +5,7 @@ package com.leetcode;
  *
  * @author zz
  */
-public class Code45 {
+public class Code45No10 {
 
     public static int jump(int[] nums) {
         /** 起跳点 */

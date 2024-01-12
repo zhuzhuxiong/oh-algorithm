@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 【数组】原地删除有序数组中的重复项
  * @author
  */
-public class Code26 {
+public class Code26No3 {
 
     public static int removeDuplicates(int[] nums) {
         int fast = 1, slow = 1;

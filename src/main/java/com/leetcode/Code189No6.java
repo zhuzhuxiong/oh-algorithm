@@ -12,7 +12,7 @@ import java.util.Map;
  *
  * @author zz
  */
-public class Code189 {
+public class Code189No6 {
 
     /**
      * 【方法1】额外空间，额外数组；

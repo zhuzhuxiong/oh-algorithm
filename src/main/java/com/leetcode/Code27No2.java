@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * @author zz
  */
-public class Code27 {
+public class Code27No2 {
 
     public static int removeElement(int[] nums, int val) {
         int count = 0;

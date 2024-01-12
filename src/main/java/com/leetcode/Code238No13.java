@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 整数数组 nums，返回数组answer，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。
  * @author zz
  */
-public class Code238 {
+public class Code238No13 {
 
     public static int[] productExceptSelf(int[] nums) {
         int length = nums.length;

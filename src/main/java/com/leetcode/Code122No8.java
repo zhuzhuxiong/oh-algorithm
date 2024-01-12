@@ -6,7 +6,7 @@ package com.leetcode;
  *  返回 你能获得的 最大 利润 。
  * @author zz
  */
-public class Code122 {
+public class Code122No8 {
 
     /**
      * 【动态规划】
