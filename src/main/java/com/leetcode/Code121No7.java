@@ -32,12 +32,12 @@ public class Code121No7 {
 
     public static int practice(int[] prices) {
         int maxProfit = 0;
-        int minPrice = Integer.MAX_VALUE;
-        for (int price : prices) {
-            if (price < minPrice) {
-                minPrice = price;
-            }else if (price - minPrice > maxProfit){
-                maxProfit = price - minPrice;
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < min) {
+                min = prices[i];
+            }else if (prices[i] - min > maxProfit){
+                maxProfit = prices[i] - min;
             }
         }
         return maxProfit;

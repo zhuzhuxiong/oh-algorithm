@@ -38,9 +38,10 @@ public class Code55No9 {
         }
 
         int[] dp = new int[nums.length];
+        dp[0] = nums[0];
         for (int i = 1; i < nums.length; i++) {
-            dp[i] = Math.max(dp[i-1], i+nums[i]);
-            if (dp[i] >= nums.length-1) {
+            dp[i] = Math.max(dp[i - 1], i + nums[i]);
+            if (dp[i] >= nums.length - 1) {
                 return true;
             }
             if (dp[i] == i) {
@@ -51,12 +52,23 @@ public class Code55No9 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {2,3,1,1,4};
-        int[] nums1 = {3,2,1,0,4};
+        int[] nums = {2, 3, 1, 1, 4};
+        int[] nums1 = {3, 2, 1, 0, 4};
+        int[] nums2 = {2,0,0};
         System.out.println(canJump(nums));
         System.out.println(canJump(nums1));
+        System.out.println(canJump(nums2));
 
         System.out.println(canJumpDp(nums));
         System.out.println(canJumpDp(nums1));
+        System.out.println(canJumpDp(nums2));
+
+        System.out.println(practice(nums));
+        System.out.println(practice(nums1));
+        System.out.println(practice(nums2));
+    }
+
+    public static boolean practice(int[] nums) {
+        return false;
     }
 }

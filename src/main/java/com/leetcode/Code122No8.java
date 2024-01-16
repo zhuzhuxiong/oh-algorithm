@@ -44,5 +44,10 @@ public class Code122No8 {
         int[] prices = {7,1,5,3,6,4};
         System.out.println(maxProfit(prices));
         System.out.println(maxProfit1(prices));
+        System.out.println(practice(prices));
+    }
+
+    public static int practice(int[] prices) {
+        return 0;
     }
 }
