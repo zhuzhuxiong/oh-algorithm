@@ -15,30 +15,29 @@ public class Medical {
         double c = 10602;
         double d = 11726243;
 
-        System.out.println("公式1：ROR:" + calROR(a, b, c, d));
         //保留两位小数，四舍五入
-        System.out.println("公式1：ROR:" + new BigDecimal(calROR(a, b, c, d)).setScale(3, RoundingMode.HALF_UP));
+        System.out.println("公式1：ROR:" + new BigDecimal(calROR(a, b, c, d)).setScale(2, RoundingMode.HALF_UP));
 
         String ci = calCI(a, b, c, d);
         System.out.println("公式2：95%CI:" + ci);
 
         double prr = calPRR(a, b, c, d);
-        System.out.println("公式3：PRR:" + prr);
+        System.out.println("公式3：PRR:" + new BigDecimal(prr).setScale(2, RoundingMode.HALF_UP));
 
         double x2 = calX2(a, b, c, d);
-        System.out.println("公式4：X^2:" + x2);
+        System.out.println("公式4：X^2:" + new BigDecimal(x2).setScale(2, RoundingMode.HALF_UP));
 
         double ic = calIC(a, b, c, d);
-        System.out.println("公式5：IC:" + ic);
+        System.out.println("公式5：IC:" + new BigDecimal(ic).setScale(2, RoundingMode.HALF_UP));
 
         double ic025 = calIC025(a, b, c, d);
-        System.out.println("公式6：IC025:" + ic025);
+        System.out.println("公式6：IC025:" + new BigDecimal(ic025).setScale(2, RoundingMode.HALF_UP));
 
         double ebgm = calEBGM(a, b, c, d);
-        System.out.println("公式7：EBGM:" + ebgm);
+        System.out.println("公式7：EBGM:" + new BigDecimal(ebgm).setScale(2, RoundingMode.HALF_UP));
 
         double ebgm05 = calEBGM05(a, b, c, d);
-        System.out.println("公式8：EBGM05：" + ebgm05);
+        System.out.println("公式8：EBGM05：" + new BigDecimal(ebgm05).setScale(2, RoundingMode.HALF_UP));
     }
 
     /**
@@ -79,7 +78,8 @@ public class Medical {
         double part5 = part1 + 1.96 * part3;
         // 计算：e^[ln(IC) + 1.96(1/a+1/b+1/c+1/d)^0.5]
         double ceil = Math.pow(Math.E, part5);
-        return floor + "--" + ceil;
+
+        return new BigDecimal(floor).setScale(2,RoundingMode.HALF_UP) + "--" + new BigDecimal(ceil).setScale(2,RoundingMode.HALF_UP);
     }
 
     /**
