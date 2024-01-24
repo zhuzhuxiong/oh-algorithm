@@ -1,9 +1,5 @@
 package com.leetcode;
 
-import com.util.PrintUtil;
-
-import java.util.Arrays;
-
 /**
  * Z字型变换
  * @author zz
@@ -49,5 +45,37 @@ public class Code6No22 {
 
         System.out.println(convert(s,4));
         System.out.println(convert("A",4));
+
+        System.out.println(practice(s,4));
+        System.out.println(practice("A",4));
+    }
+
+    public static String practice(String s, int numRows) {
+        int n = s.length(), r = numRows;
+        if (n <= r || r == 1) {
+            return s;
+        }
+        int t = r + r - 2;
+        int c = (n + t -1) / t * (r - 1);
+        char[][] chars = new char[r][c];
+        for (int i = 0, x = 0, y = 0; i < n; i++) {
+            chars[x][y] = s.charAt(i);
+            if (i % t < r - 1){
+                x++;
+            }else {
+                y++;
+                x--;
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (char[] aChar : chars) {
+            for (char cc : aChar) {
+                if (cc != 0){
+                    sb.append(cc);
+                }
+            }
+        }
+        return sb.toString();
     }
 }

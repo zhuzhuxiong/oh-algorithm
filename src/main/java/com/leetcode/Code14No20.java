@@ -56,5 +56,29 @@ public class Code14No20 {
         System.out.println(longestCommonPrefix(str1));
         System.out.println(longestCommonPrefix(str2));
         System.out.println(longestCommonPrefix(str3));
+        System.out.println("------------------------");
+        System.out.println(practice(str));
+        System.out.println(practice(str1));
+        System.out.println(practice(str2));
+        System.out.println(practice(str3));
+    }
+
+    public static String practice(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        String pre = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            int length = Math.min(pre.length(), strs[i].length());
+            int index = 0;
+            while (index < length && pre.charAt(index) == strs[i].charAt(index)) {
+                index++;
+            }
+            pre = pre.substring(0, index);
+            if (pre.length() == 0) {
+                break;
+            }
+        }
+        return pre;
     }
 }
