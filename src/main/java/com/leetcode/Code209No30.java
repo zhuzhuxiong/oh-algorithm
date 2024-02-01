@@ -2,6 +2,7 @@ package com.leetcode;
 
 /**
  * 滑动窗口
+ *
  * @author zz
  */
 public class Code209No30 {
@@ -24,7 +25,7 @@ public class Code209No30 {
             }
             end++;
         }
-        return ans == Integer.MAX_VALUE ? 0: ans;
+        return ans == Integer.MAX_VALUE ? 0 : ans;
     }
 
     public static int minSubArrayLen1(int target, int[] nums) {
@@ -39,7 +40,7 @@ public class Code209No30 {
             for (int j = i; j < n; j++) {
                 sum = sum + nums[j];
                 if (sum >= target) {
-                    ans = Math.min(ans,j-i+1);
+                    ans = Math.min(ans, j - i + 1);
                     break;
                 }
             }
@@ -48,9 +49,9 @@ public class Code209No30 {
     }
 
     public static void main(String[] args) {
-        int[] n1 = {2,3,1,2,4,3};
-        int[] n2 = {1,4,4};
-        int[] n3 = {1,1,1,1,1,1,1,1};
+        int[] n1 = {2, 3, 1, 2, 4, 3};
+        int[] n2 = {1, 4, 4};
+        int[] n3 = {1, 1, 1, 1, 1, 1, 1, 1};
 
         System.out.println(minSubArrayLen(7, n1));
         System.out.println(minSubArrayLen(4, n2));
@@ -61,6 +62,16 @@ public class Code209No30 {
         System.out.println(minSubArrayLen1(7, n1));
         System.out.println(minSubArrayLen1(4, n2));
         System.out.println(minSubArrayLen1(11, n3));
+
+        System.out.println("--------------");
+
+        System.out.println(practice(7, n1));
+        System.out.println(practice(4, n2));
+        System.out.println(practice(11, n3));
+    }
+
+    public static int practice(int target, int[] nums) {
+        return 0;
     }
 
 }
