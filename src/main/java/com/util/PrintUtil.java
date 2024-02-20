@@ -5,6 +5,7 @@ import com.structure.linked.ListNode;
 import com.structure.tree.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,6 +22,14 @@ public class PrintUtil {
         System.out.println("[");
         for (List<T> row : matrix) {
             System.out.println("  " + row + ",");
+        }
+        System.out.println("]");
+    }
+
+    public static <T> void printMatrix1(T[][] matrix) {
+        System.out.println("[");
+        for (T[] row : matrix) {
+            System.out.println("  " + Arrays.toString(row) + ",");
         }
         System.out.println("]");
     }
