@@ -97,10 +97,10 @@ public class Code73No37 {
 
         Integer[][] matrix2 = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
         Integer[][] matrix22 = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
-        setZeroes1(matrix2);
+        practice(matrix2);
         PrintUtil.printMatrix1(matrix2);
         System.out.println("------------------");
-        setZeroes1(matrix22);
+        practice(matrix22);
         PrintUtil.printMatrix1(matrix22);
     }
 
@@ -110,12 +110,42 @@ public class Code73No37 {
 
         for (int i = 0; i < m; i++) {
             if (matrix[i][0] == 0) {
-                colFlag = true;
+                rowFlag = true;
+                break;
             }
         }
         for (int i = 0; i < n; i++) {
             if (matrix[0][i] == 0) {
-                rowFlag = true;
+                colFlag = true;
+                break;
+            }
+        }
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = matrix[0][j] = 0;
+                }
+            }
+        }
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        if (rowFlag) {
+            for (int i = 0; i < m; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+
+        if (colFlag) {
+            for (int i = 0; i < n; i++) {
+                matrix[0][i] = 0;
             }
         }
 
