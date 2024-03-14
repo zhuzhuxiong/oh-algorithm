@@ -38,7 +38,7 @@ public class LinkedList {
     }
 
     /** 插入 old --> new --> old.next*/
-    static void insert(ListNode node, ListNode nodeNew) {
+    public static void insert(ListNode node, ListNode nodeNew) {
         nodeNew.next = node.next;
         node.next = nodeNew;
     }

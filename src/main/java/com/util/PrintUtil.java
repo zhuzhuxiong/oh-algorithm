@@ -34,6 +34,14 @@ public class PrintUtil {
         System.out.println("]");
     }
 
+    public static void printMatrix1(int[][] matrix) {
+        System.out.println("[");
+        for (int[] row : matrix) {
+            System.out.println("  " + Arrays.toString(row) + ",");
+        }
+        System.out.println("]");
+    }
+
     /**
      * 打印链表
      * @param header
