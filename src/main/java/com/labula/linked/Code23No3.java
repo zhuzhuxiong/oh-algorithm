@@ -46,26 +46,6 @@ public class Code23No3 {
     }
 
     public ListNode practice(ListNode[] lists) {
-        if (lists.length == 0) {
-            return null;
-        }
-        ListNode dummy = new ListNode(-1);
-        ListNode p = dummy;
-
-        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length,(a,b) -> (a.val - b.val));
-        for (ListNode node : lists) {
-            if (node != null) {
-                queue.add(node);
-            }
-        }
-        while (!queue.isEmpty()) {
-            ListNode node = queue.poll();
-            p.next = node;
-            if (node.next != null) {
-                queue.add(node.next);
-            }
-            p = p.next;
-        }
-        return dummy.next;
+        return null;
     }
 }
