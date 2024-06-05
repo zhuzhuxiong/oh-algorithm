@@ -28,7 +28,6 @@ public class Code103No4 {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-
                 if (flag) {
                     list.addLast(node.val);
                 }else {
@@ -57,5 +56,36 @@ public class Code103No4 {
         TreeNode root1 = TreeNode.listToTree(Arrays.asList(1,2,3,4,5));
         PrintUtil.printTree(root1);
         System.out.println(new Code103No4().zigzagLevelOrder(root1));
+    }
+
+    public List<List<Integer>> practice(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean flag = true;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            LinkedList<Integer> list = new LinkedList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (flag) {
+                    list.addLast(node.val);
+                }else {
+                    list.addFirst(node.val);
+                }
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            flag = !flag;
+            res.add(list);
+        }
+        return res;
     }
 }
