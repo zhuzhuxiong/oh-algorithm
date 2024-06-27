@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 每一条二叉树的「直径」长度，就是一个节点的左右子树的最大深度之和。
  * @author zz
  */
-public class Code543No2 {
+public class No2Code543 {
 
     int maxDiameter = 0;
 
@@ -72,9 +72,9 @@ public class Code543No2 {
     public static void main(String[] args) {
         TreeNode treeNode = TreeNode.listToTree(Arrays.asList(new Integer[]{1, 2, 3, 4, 5}));
         PrintUtil.printTree(treeNode);
-        System.out.println(new Code543No2().diameterOfBinaryTree(treeNode));
-        System.out.println(new Code543No2().practice(treeNode));
-        System.out.println(new Code543No2().practice1(treeNode));
+        System.out.println(new No2Code543().diameterOfBinaryTree(treeNode));
+        System.out.println(new No2Code543().practice(treeNode));
+//        System.out.println(new No2Code543().practice1(treeNode));
     }
 
     /**
@@ -82,49 +82,35 @@ public class Code543No2 {
      * @param root
      * @return
      */
+    private int maxDia = 0;
     public int practice(TreeNode root) {
-        traversePrac(root);
-        return maxDiameter;
+        traversePra(root);
+        return maxDia;
     }
 
-    private void traversePrac(TreeNode node) {
-        if (node == null) {
+    private void traversePra(TreeNode root) {
+        if (root == null) {
             return;
         }
-        int left = maxDepthPra(node.left);
-        int right = maxDepthPra(node.right);
-        int my = left + right;
-        maxDiameter = Math.max(maxDiameter, my);
 
-        traversePrac(node.left);
-        traversePrac(node.right);
+        int left = maxdepthPra(root.left);
+        int right = maxdepthPra(root.right);
+        maxDia = Math.max((left + right), maxDia);
 
+        traverse(root.left);
+        traverse(root.right);
     }
 
-    private int maxDepthPra(TreeNode node) {
-        if (node == null) {
+    private int maxdepthPra(TreeNode root) {
+        if (root == null) {
             return 0;
         }
-        int left = maxDepthPra(node.left);
-        int right = maxDepthPra(node.right);
+
+        int left = maxdepthPra(root.left);
+        int right = maxdepthPra(root.left);
+
         return Math.max(left, right) + 1;
     }
 
-    public int practice1(TreeNode root) {
-        maxDiameter1(root);
-        return maxDiameter;
-    }
 
-    private int maxDiameter1(TreeNode node) {
-        if (node == null) {
-            return 0;
-        }
-
-        int left = maxDiameter1(node.left);
-        int right = maxDiameter1(node.right);
-        int my = left + right;
-        maxDiameter = Math.max(my, maxDiameter);
-
-        return 1 + Math.max(left, right);
-    }
 }
