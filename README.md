@@ -1,4 +1,4 @@
-# oh-algorithm
+# oh-algorithm（私人学习）
 1. algo
     1. [hello-algo](https://www.hello-algo.com/chapter_preface/)
 2. labula

@@ -1,4 +1,4 @@
-package com.labula.tree;
+package com.labula.tree.construct;
 
 import com.structure.tree.TreeNode;
 import com.util.PrintUtil;
@@ -10,7 +10,7 @@ import java.util.Map;
  * 中后序构建tree
  * @author zz
  */
-public class Code106No7 {
+public class No3Code106 {
 
     Map<Integer, Integer> in = new HashMap<>();
 
@@ -43,9 +43,9 @@ public class Code106No7 {
     public static void main(String[] args) {
         int[] in = {9,3,15,20,7};
         int[] post = {9,15,7,20,3};
-        TreeNode node = new Code106No7().buildTree(in, post);
+        TreeNode node = new No3Code106().buildTree(in, post);
         PrintUtil.printTree(node);
-        TreeNode node1 = new Code106No7().practice(in, post);
+        TreeNode node1 = new No3Code106().practice(in, post);
         PrintUtil.printTree(node1);
     }
 
@@ -70,7 +70,7 @@ public class Code106No7 {
         root.left = build1(inorder, inStart, index - 1,
                 postorder, postStart, postStart + leftSize - 1);
         root.right = build1(inorder, index + 1, inEnd,
-                postorder, postStart + leftSize , postEnd - 1);
+                postorder, postStart + leftSize, postEnd - 1);
         return root;
     }
 

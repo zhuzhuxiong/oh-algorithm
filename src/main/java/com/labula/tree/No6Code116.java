@@ -1,13 +1,9 @@
 package com.labula.tree;
 
-import com.structure.tree.TreeNode;
-
-import java.util.ArrayList;
-
 /**
  * @author zz
  */
-public class No8Code116 {
+public class No6Code116 {
 
     public Node connect(Node root) {
         if (root == null) {

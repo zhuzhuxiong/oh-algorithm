@@ -1,7 +1,6 @@
 package com.labula.linked;
 
 import com.structure.linked.ListNode;
-import com.sun.xml.internal.messaging.saaj.soap.ver1_1.Header1_1Impl;
 
 /**
  * @author zz

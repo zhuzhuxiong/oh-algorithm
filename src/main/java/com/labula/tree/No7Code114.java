@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * @author zz
  */
-public class No9Code114 {
+public class No7Code114 {
 
     public void flatten(TreeNode root) {
         if (root == null) {
@@ -33,7 +33,7 @@ public class No9Code114 {
 
     public static void main(String[] args) {
         TreeNode node = TreeNode.listToTree(Arrays.asList(1, 2, 5, 3, 4, null, 6));
-        No9Code114 code114 = new No9Code114();
+        No7Code114 code114 = new No7Code114();
         code114.flatten(node);
         PrintUtil.printTree(node);
     }

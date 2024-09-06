@@ -1,7 +1,5 @@
 package com.labula.array.slidingWindow;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
 import java.util.HashMap;
 
 /**
