@@ -1,5 +1,7 @@
 package com.labula.dp;
 
+import sun.java2d.pipe.RegionIterator;
+
 import java.util.Arrays;
 
 /**
@@ -83,13 +85,12 @@ public class No3Code300 {
 
         for (int i = 0; i < nums.length; i++) {
             int poker = nums[i];
-
             int left = 0, right = piles;
             while (left < right) {
                 int mid = left + (right - left) / 2;
                 if (top[mid] > poker) {
                     right = mid;
-                }else if (top[mid] < poker) {
+                }else if(top[mid] < poker) {
                     left = mid + 1;
                 }else {
                     right = mid;

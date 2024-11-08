@@ -56,32 +56,6 @@ public class No5Code931 {
 
     int[][] memos;
     public int practice(int[][] matrix) {
-        int m = matrix.length;
-        memos = new int[m][m];
-        for (int i = 0; i < memos.length; i++) {
-            Arrays.fill(memos[i], 666666);
-        }
-
-        int res = Integer.MAX_VALUE;
-        for (int i = 0; i < m; i++) {
-            res = Math.min(res, dpp(matrix, m - 1 , i));
-        }
-
-        return res;
-    }
-
-    private int dpp(int[][] matrix, int i, int j) {
-        if (i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length) {
-            return 999999;
-        }
-        if (i == 0) {
-            return matrix[0][j];
-        }
-        if (memos[i][j] != 666666) {
-            return memos[i][j];
-        }
-
-        memos[i][j] = matrix[i][j] + min(dpp(matrix, i - 1, j - 1), dpp(matrix, i - 1, j), dpp(matrix, i - 1, j + 1));
-        return memos[i][j];
+        return 0;
     }
 }

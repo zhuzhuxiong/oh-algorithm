@@ -107,22 +107,35 @@ public class No2Code322 {
 
 
 
-
+    int[] memos;
     public int practice(int[] coins, int amount) {
-        int[] dp = new int[amount + 1];
-        Arrays.fill(dp, amount + 1);
+        memos = new int[amount + 1];
+        Arrays.fill(memos, -666);
 
-        dp[0] = 0;
+        return dpp(coins, amount);
+    }
 
-        for (int i = 1; i <dp.length; i++) {
-            for (int coin : coins) {
-                if (i - coin < 0) {
-                    continue;
-                }
-                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
-            }
+    private int dpp(int[] coins, int amount) {
+        if (amount == 0) {
+            return 0;
         }
-        return dp[amount] == amount + 1 ? -1 : dp[amount];
+        if (amount < 0) {
+            return -1;
+        }
+        if (memos[amount] != -666) {
+            return memos[amount];
+        }
+        int res = Integer.MAX_VALUE;
+        for (int coin : coins) {
+            int sub = dpp(coins, amount - coin);
+            if (sub == -1) {
+                continue;
+            }
+            res = Math.min(res, sub + 1);
+        }
+
+        memos[amount] = res == Integer.MAX_VALUE ? -1 : res;
+        return memos[amount];
     }
 
 

@@ -54,5 +54,44 @@ public class No10Code712 {
         String s1 = "sea", s2 = "eat";
         No10Code712 code712 = new No10Code712();
         System.out.println(code712.minimumDeleteSum(s1, s2));
+        System.out.println(code712.practice(s1, s2));
+    }
+
+    int[][] memos;
+    public int practice(String s1, String s2) {
+        int m = s1.length(), n = s2.length();
+        memos = new int[m][n];
+        for (int[] ints : memos) {
+            Arrays.fill(ints, -1);
+        }
+        return dpp(s1, 0, s2, 0);
+    }
+
+    private int dpp(String s1, int i, String s2, int j) {
+        int res = 0;
+        if (i == s1.length()) {
+            for (; j < s2.length(); j++) {
+                res += s2.charAt(j);
+            }
+            return res;
+        }
+        if (j == s2.length()) {
+            for (; i < s1.length(); i++) {
+                res += s1.charAt(i);
+            }
+            return res;
+        }
+
+        if (memos[i][j] != -1) {
+            return memos[i][j];
+        }
+
+        if (s1.charAt(i) == s2.charAt(j)) {
+            memos[i][j] = dpp(s1, i + 1, s2, j + 1);
+        }else {
+            memos[i][j] = Math.min(dpp(s1, i + 1, s2, j) + s1.charAt(i), dpp(s1, i, s2, j + 1) + s2.charAt(j));
+        }
+
+        return memos[i][j];
     }
 }

@@ -61,20 +61,18 @@ public class No4Code354 {
         }
 
         int[] top = new int[height.length];
-
         int piles = 0;
 
         for (int i = 0; i < height.length; i++) {
             int poker = height[i];
-
             int left = 0, right = piles;
             while (left < right) {
                 int mid = left + (right - left) / 2;
                 if (top[mid] > poker) {
                     right = mid;
-                } else if (top[mid] < poker) {
+                }else if (top[mid] < poker) {
                     left = mid + 1;
-                } else {
+                }else {
                     right = mid;
                 }
             }
@@ -85,4 +83,5 @@ public class No4Code354 {
         }
         return piles;
     }
+
 }
