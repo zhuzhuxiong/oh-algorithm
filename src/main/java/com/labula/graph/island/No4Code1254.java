@@ -1,5 +1,7 @@
 package com.labula.graph.island;
 
+import com.util.PrintUtil;
+
 /**
  * number of close islands
  * @author zz
@@ -67,6 +69,7 @@ public class No4Code1254 {
         };
 //        System.out.println(new No4Code1254().closedIsland(grid));
         System.out.println(new No4Code1254().practice(grid));
+        PrintUtil.printMatrix1(grid);
     }
 
     public int practice(int[][] grid) {

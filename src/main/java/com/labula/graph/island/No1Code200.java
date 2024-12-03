@@ -62,8 +62,9 @@ public class No1Code200 {
     }
 
     public int practice(char[][] grid) {
-        int res = 0;
         int m = grid.length, n = grid[0].length;
+
+        int res = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1') {
@@ -76,19 +77,17 @@ public class No1Code200 {
     }
 
     private void dfs1(char[][] grid, int i, int j) {
-        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length) {
+        int m = grid.length, n = grid[0].length;
+        if (i < 0 || j < 0 || i >= m || j >= n) {
             return;
         }
         if (grid[i][j] != '1') {
             return;
         }
-
         grid[i][j] = '2';
-
-        dfs1(grid, i + 1,j);
-        dfs1(grid,i,j + 1);
-        dfs1(grid,i - 1,j);
-        dfs1(grid,i,j - 1);
-
+        dfs1(grid, i + 1, j);
+        dfs1(grid, i, j + 1);
+        dfs1(grid, i - 1, j);
+        dfs1(grid, i, j - 1);
     }
 }
