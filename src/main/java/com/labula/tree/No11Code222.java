@@ -31,4 +31,8 @@ public class No11Code222 {
     public static void main(String[] args) {
 
     }
+
+    public int practice(TreeNode root) {
+        return 1 + practice(root.left) + practice(root.right);
+    }
 }

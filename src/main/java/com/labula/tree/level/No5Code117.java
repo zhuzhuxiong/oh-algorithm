@@ -45,9 +45,38 @@ public class No5Code117 {
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < 1; i++) {
-            System.out.println(i);
+
+
+    }
+
+    public Node practice(Node root) {
+        if (root == null) {
+            return null;
         }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+
+            Node pre = null;
+            for (int i = 0; i < size; i++) {
+                Node cur = queue.poll();
+
+                if (pre != null) {
+                    pre.next = cur;
+                }
+                pre = cur;
+                if (cur.left != null) {
+                    queue.add(cur.left);
+                }
+                if (cur.right != null) {
+                    queue.add(cur.right);
+                }
+            }
+        }
+        return root;
     }
 
     class Node {

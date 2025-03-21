@@ -37,18 +37,19 @@ public class No5Code67 {
         a = new StringBuilder(a).reverse().toString();
         b = new StringBuilder(b).reverse().toString();
 
-        int carry = 0;
         int m = a.length(), n = b.length();
+        int carry = 0;
         int i = 0;
 
         StringBuilder res = new StringBuilder();
-        while (carry > 0 || i < Math.max(m,n)) {
+        while (i < Math.max(m, n) || carry > 0) {
             int val = carry;
-            val += (i < m ? (a.charAt(i) - '0') : 0);
-            val += (i < n ? (b.charAt(i) - '0') : 0);
+            val = val + (i < m ? (a.charAt(i) - '0') : 0);
+            val = val + (i < n ? (b.charAt(i) - '0') : 0);
 
-            carry = val / 2;
             res.append(val % 2);
+            carry = val / 2;
+
             i++;
         }
         return res.reverse().toString();
