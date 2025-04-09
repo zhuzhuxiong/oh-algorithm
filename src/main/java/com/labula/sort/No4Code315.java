@@ -12,6 +12,9 @@ public class No4Code315 {
     }
 
     public static void main(String[] args) {
-
+        Integer i = 10;
+        Integer j = 10;
+        System.out.println(j == i);
+        System.out.println("hello");
     }
 }
